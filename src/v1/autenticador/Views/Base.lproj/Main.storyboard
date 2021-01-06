@@ -82,14 +82,40 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nuR-vU-37K" secondAttribute="trailing" constant="15" id="nDq-Yh-1cW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Autenticador" id="cIN-lJ-DYH"/>
+                    <navigationItem key="navigationItem" title="Autenticador" id="cIN-lJ-DYH">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="TRy-8j-u5F">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Novo" id="iA8-et-Gds">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="Gcb-iS-RA8" kind="show" id="2x7-Op-iL7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="otpsTableView" destination="nuR-vU-37K" id="3Hw-pd-yfJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33.75" y="79.225352112676063"/>
+            <point key="canvasLocation" x="73" y="78"/>
+        </scene>
+        <!--Novo-->
+        <scene sceneID="WTA-TW-Rmv">
+            <objects>
+                <viewController id="Gcb-iS-RA8" customClass="NewOtpViewController" customModule="autenticador" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ucJ-9U-AWp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Uyb-qf-uzx"/>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Novo" id="nec-R4-h92"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0p-fX-6t9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="949" y="79"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rxh-po-Z1C">

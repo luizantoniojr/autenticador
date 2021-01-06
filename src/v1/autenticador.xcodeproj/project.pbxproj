@@ -15,6 +15,7 @@
 		BFB813F025A3FBB500405BF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB813EE25A3FBB500405BF1 /* LaunchScreen.storyboard */; };
 		BFB813FF25A533E900405BF1 /* OtpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB813FE25A533E900405BF1 /* OtpTableViewCell.swift */; };
 		BFB8140225A536B200405BF1 /* Otp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8140125A536B200405BF1 /* Otp.swift */; };
+		BFB8140525A55CAA00405BF1 /* NewOtpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8140425A55CAA00405BF1 /* NewOtpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BFB813F125A3FBB500405BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFB813FE25A533E900405BF1 /* OtpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpTableViewCell.swift; sourceTree = "<group>"; };
 		BFB8140125A536B200405BF1 /* Otp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Otp.swift; sourceTree = "<group>"; };
+		BFB8140425A55CAA00405BF1 /* NewOtpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOtpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				BFB813E725A3FBAE00405BF1 /* MainViewController.swift */,
 				BFB813FE25A533E900405BF1 /* OtpTableViewCell.swift */,
+				BFB8140425A55CAA00405BF1 /* NewOtpViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFB813E825A3FBAE00405BF1 /* MainViewController.swift in Sources */,
+				BFB8140525A55CAA00405BF1 /* NewOtpViewController.swift in Sources */,
 				BFB813E425A3FBAE00405BF1 /* AppDelegate.swift in Sources */,
 				BFB813E625A3FBAE00405BF1 /* SceneDelegate.swift in Sources */,
 				BFB8140225A536B200405BF1 /* Otp.swift in Sources */,
