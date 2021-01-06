@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,14 +15,81 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" userLabel="Main View">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nuR-vU-37K" userLabel="Otps Table View">
+                                <rect key="frame" x="15" y="59" width="290" height="494"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OtpTableViewCell" rowHeight="100" id="BzE-Ws-OhO" userLabel="Otp Table View Cell" customClass="OtpTableViewCell" customModule="autenticador" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="290" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BzE-Ws-OhO" id="kww-ye-zCN" userLabel="Otp item">
+                                            <rect key="frame" x="0.0" y="0.0" width="290" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="u003337" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAw-8C-N8Q">
+                                                    <rect key="frame" x="10" y="10" width="80" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="80" id="pBq-n8-g4T"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="0.7803921568627451" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0TZ-sj-dnO" userLabel="Loading">
+                                                    <rect key="frame" x="260" y="70" width="20" height="20"/>
+                                                    <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </activityIndicatorView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="888888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwQ-KO-AMb" userLabel="Otp Label">
+                                                    <rect key="frame" x="76" y="29" width="138" height="42"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="gwQ-KO-AMb" firstAttribute="leading" secondItem="wAw-8C-N8Q" secondAttribute="trailing" constant="-14" id="4yE-yr-UBm"/>
+                                                <constraint firstItem="wAw-8C-N8Q" firstAttribute="top" secondItem="kww-ye-zCN" secondAttribute="top" constant="10" id="Evg-gn-rgg"/>
+                                                <constraint firstAttribute="trailing" secondItem="0TZ-sj-dnO" secondAttribute="trailing" constant="10" id="Og6-7u-4OY"/>
+                                                <constraint firstAttribute="trailing" secondItem="gwQ-KO-AMb" secondAttribute="trailing" constant="76" id="Pi6-rx-8f6"/>
+                                                <constraint firstItem="gwQ-KO-AMb" firstAttribute="leading" secondItem="kww-ye-zCN" secondAttribute="leading" constant="76" id="RFD-Vv-njQ"/>
+                                                <constraint firstItem="0TZ-sj-dnO" firstAttribute="leading" secondItem="gwQ-KO-AMb" secondAttribute="trailing" constant="46" id="fwq-Ze-MJe"/>
+                                                <constraint firstAttribute="bottom" secondItem="0TZ-sj-dnO" secondAttribute="bottom" constant="10" id="hdd-tu-D2r"/>
+                                                <constraint firstItem="gwQ-KO-AMb" firstAttribute="centerY" secondItem="kww-ye-zCN" secondAttribute="centerY" id="oBx-mk-Ev9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gwQ-KO-AMb" secondAttribute="bottom" constant="18" id="pSx-Kq-nIn"/>
+                                                <constraint firstItem="wAw-8C-N8Q" firstAttribute="leading" secondItem="kww-ye-zCN" secondAttribute="leading" constant="10" id="vco-yF-TGS"/>
+                                            </constraints>
+                                            <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <edgeInsets key="layoutMargins" top="20" left="8" bottom="8" right="8"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="wAw-8C-N8Q" id="f9N-ws-JNm"/>
+                                            <outlet property="otpLabel" destination="gwQ-KO-AMb" id="QqP-TW-Hyh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.078431372549019607" green="0.078431372549019607" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nuR-vU-37K" secondAttribute="bottom" constant="15" id="4Hh-r2-dc7"/>
+                            <constraint firstItem="nuR-vU-37K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="5nF-oH-jKT"/>
+                            <constraint firstItem="nuR-vU-37K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="No6-is-Iuu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nuR-vU-37K" secondAttribute="trailing" constant="15" id="nDq-Yh-1cW"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Autenticador" id="3my-HG-7sC"/>
+                    <navigationItem key="navigationItem" title="Autenticador" id="cIN-lJ-DYH"/>
+                    <connections>
+                        <outlet property="otpsTableView" destination="nuR-vU-37K" id="3Hw-pd-yfJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="80"/>
+            <point key="canvasLocation" x="33.75" y="79.225352112676063"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Rxh-po-Z1C">
@@ -45,4 +113,9 @@
             <point key="canvasLocation" x="-821" y="79"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

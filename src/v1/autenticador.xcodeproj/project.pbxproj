@@ -13,6 +13,8 @@
 		BFB813EB25A3FBAE00405BF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB813E925A3FBAE00405BF1 /* Main.storyboard */; };
 		BFB813ED25A3FBB500405BF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFB813EC25A3FBB500405BF1 /* Assets.xcassets */; };
 		BFB813F025A3FBB500405BF1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFB813EE25A3FBB500405BF1 /* LaunchScreen.storyboard */; };
+		BFB813FF25A533E900405BF1 /* OtpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB813FE25A533E900405BF1 /* OtpTableViewCell.swift */; };
+		BFB8140225A536B200405BF1 /* Otp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8140125A536B200405BF1 /* Otp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BFB813EC25A3FBB500405BF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFB813EF25A3FBB500405BF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFB813F125A3FBB500405BF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFB813FE25A533E900405BF1 /* OtpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpTableViewCell.swift; sourceTree = "<group>"; };
+		BFB8140125A536B200405BF1 /* Otp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Otp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 		BFB813F825A4C6AA00405BF1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BFB8140125A536B200405BF1 /* Otp.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -87,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB813E725A3FBAE00405BF1 /* MainViewController.swift */,
+				BFB813FE25A533E900405BF1 /* OtpTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -164,6 +170,8 @@
 				BFB813E825A3FBAE00405BF1 /* MainViewController.swift in Sources */,
 				BFB813E425A3FBAE00405BF1 /* AppDelegate.swift in Sources */,
 				BFB813E625A3FBAE00405BF1 /* SceneDelegate.swift in Sources */,
+				BFB8140225A536B200405BF1 /* Otp.swift in Sources */,
+				BFB813FF25A533E900405BF1 /* OtpTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
