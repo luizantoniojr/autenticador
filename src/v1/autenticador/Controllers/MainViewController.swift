@@ -46,6 +46,9 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
         cell.nameLabel?.text = otp.name
         cell.otpLabel?.text = otp.generate()
         
+        let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showDetails))
+        cell.addGestureRecognizer(longPress)
+        
         return cell
     }
     
@@ -68,10 +71,10 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "novo",
-            let viewController = segue.destination as? NewOtpViewController {
-                    viewController.delegate = self
-            }
+        if segue.identifier == "novo",
+        let viewController = segue.destination as? NewOtpViewController {
+                viewController.delegate = self
+        }
     }
     
     func add(_ otp: Otp) {
@@ -84,4 +87,31 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
             Alert(controller: self).show(message: "Não foi possível salvar o OTP.")
         }
     }
+    
+    @objc func showDetails(_ gesture: UILongPressGestureRecognizer) {
+        if gesture.state == .began {
+            let cell = gesture.view as! UITableViewCell
+            if let indexPath = self.otpsTableView.indexPath(for: cell) {
+                let otp  = otps[indexPath.row]
+                
+                let acoes = getActions { (alert) in
+                    do {
+                        self.otps.remove(at: indexPath.row)
+                        try self.otpDao.delete(at: indexPath.row)
+                        self.otpsTableView.reloadData()
+                    } catch {
+                        Alert(controller: self).show(message: "Não foi possível remover o OTP.")
+                    }
+                }
+                Alert(controller: self).show(title: otp.name, message: otp.seed, actions: acoes)
+            }
+        }
+    }
+    
+    func getActions (removerHandler: @escaping (UIAlertAction) -> Void) -> [UIAlertAction] {
+       let removeAction =  UIAlertAction(title: "Remover", style: .destructive, handler: removerHandler)
+       let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+       
+       return [cancelAction, removeAction]
+   }
 }
