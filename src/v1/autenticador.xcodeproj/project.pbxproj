@@ -16,6 +16,10 @@
 		BFB813FF25A533E900405BF1 /* OtpTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB813FE25A533E900405BF1 /* OtpTableViewCell.swift */; };
 		BFB8140225A536B200405BF1 /* Otp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8140125A536B200405BF1 /* Otp.swift */; };
 		BFB8140525A55CAA00405BF1 /* NewOtpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8140425A55CAA00405BF1 /* NewOtpViewController.swift */; };
+		BFB8140825A69C2F00405BF1 /* ManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8140725A69C2F00405BF1 /* ManualViewController.swift */; };
+		BFB8141525AE7A3100405BF1 /* BaseDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8141425AE7A3100405BF1 /* BaseDao.swift */; };
+		BFB8141925AE7A5D00405BF1 /* OtpDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8141825AE7A5D00405BF1 /* OtpDao.swift */; };
+		BFB8141C25AE7B3D00405BF1 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB8141B25AE7B3D00405BF1 /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		BFB813FE25A533E900405BF1 /* OtpTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpTableViewCell.swift; sourceTree = "<group>"; };
 		BFB8140125A536B200405BF1 /* Otp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Otp.swift; sourceTree = "<group>"; };
 		BFB8140425A55CAA00405BF1 /* NewOtpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOtpViewController.swift; sourceTree = "<group>"; };
+		BFB8140725A69C2F00405BF1 /* ManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualViewController.swift; sourceTree = "<group>"; };
+		BFB8141425AE7A3100405BF1 /* BaseDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDao.swift; sourceTree = "<group>"; };
+		BFB8141825AE7A5D00405BF1 /* OtpDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpDao.swift; sourceTree = "<group>"; };
+		BFB8141B25AE7B3D00405BF1 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		BFB813E225A3FBAE00405BF1 /* autenticador */ = {
 			isa = PBXGroup;
 			children = (
+				BFB8141325AE79F900405BF1 /* Data */,
 				BFB813FB25A4C6CF00405BF1 /* Controllers */,
 				BFB813FA25A4C6C600405BF1 /* Views */,
 				BFB813F825A4C6AA00405BF1 /* Models */,
@@ -77,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				BFB8140125A536B200405BF1 /* Otp.swift */,
+				BFB8141B25AE7B3D00405BF1 /* Alert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -96,8 +106,18 @@
 				BFB813E725A3FBAE00405BF1 /* MainViewController.swift */,
 				BFB813FE25A533E900405BF1 /* OtpTableViewCell.swift */,
 				BFB8140425A55CAA00405BF1 /* NewOtpViewController.swift */,
+				BFB8140725A69C2F00405BF1 /* ManualViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BFB8141325AE79F900405BF1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BFB8141425AE7A3100405BF1 /* BaseDao.swift */,
+				BFB8141825AE7A5D00405BF1 /* OtpDao.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,10 +192,14 @@
 			files = (
 				BFB813E825A3FBAE00405BF1 /* MainViewController.swift in Sources */,
 				BFB8140525A55CAA00405BF1 /* NewOtpViewController.swift in Sources */,
+				BFB8141925AE7A5D00405BF1 /* OtpDao.swift in Sources */,
 				BFB813E425A3FBAE00405BF1 /* AppDelegate.swift in Sources */,
 				BFB813E625A3FBAE00405BF1 /* SceneDelegate.swift in Sources */,
 				BFB8140225A536B200405BF1 /* Otp.swift in Sources */,
+				BFB8140825A69C2F00405BF1 /* ManualViewController.swift in Sources */,
 				BFB813FF25A533E900405BF1 /* OtpTableViewCell.swift in Sources */,
+				BFB8141C25AE7B3D00405BF1 /* Alert.swift in Sources */,
+				BFB8141525AE7A3100405BF1 /* BaseDao.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

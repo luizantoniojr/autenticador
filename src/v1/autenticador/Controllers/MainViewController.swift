@@ -7,18 +7,27 @@
 
 import UIKit
 
-class MainViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate, AddOtpProtocol {
     
     @IBOutlet weak var otpsTableView: UITableView!
     var otps: [Otp] = Array<Otp>()
     let backgroundColor = UIColor(red: 20, green: 20, blue: 20, alpha: 0)
+    let otpDao = OtpDao()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        otps.append(Otp("3903688", 335412))
-        otps.append(Otp("U003337", 324567))
+        loadOtps()
     }
+    
+    private func loadOtps() {
+       do {
+            otps = try otpDao.get()
+            self.otpsTableView.reloadData()
+       } catch {
+           Alert(controller: self).show(message: "Não foi possível ler os OTPs.")
+       }
+   }
     
     func setupTableView() {
         self.otpsTableView.dataSource = self
@@ -35,7 +44,7 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! OtpTableViewCell
         let otp = otps[indexPath.section]
         cell.nameLabel?.text = otp.name
-        cell.otpLabel?.text = String(otp.value)
+        cell.otpLabel?.text = String(otp.generate())
         
         return cell
     }
@@ -56,5 +65,23 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return otps.count
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "novo",
+            let viewController = segue.destination as? NewOtpViewController {
+                    viewController.delegate = self
+            }
+    }
+    
+    func add(_ otp: Otp) {
+        do {
+            otps.append(otp)
+            try otpDao.save(otps)
+            self.otpsTableView.reloadData()
+        } catch {
+            otps.removeLast()
+            Alert(controller: self).show(message: "Não foi possível salvar o OTP.")
+        }
     }
 }

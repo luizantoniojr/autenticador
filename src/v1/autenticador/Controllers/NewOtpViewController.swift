@@ -8,12 +8,29 @@
 import Foundation
 import UIKit
 
-class NewOtpViewController:  UIViewController {
+protocol AddOtpProtocol {
+    func add(_ otp:Otp)
+}
+
+class NewOtpViewController:  UIViewController, AddOtpManuallyProtocol {
+    
+    var delegate: AddOtpProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(
-            title: "Voltar", style: .plain, target: nil, action: nil)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "manual",
+            let viewController = segue.destination as? ManualViewController {
+                    viewController.delegate = self
+            }
+    }
+    
+    func add(_ otp: Otp) {
+        if let delegate = delegate {
+            delegate.add(otp)
+            navigationController?.popViewController(animated: true)
+        }
     }
 }

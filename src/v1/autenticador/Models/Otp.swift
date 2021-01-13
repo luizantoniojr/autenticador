@@ -10,20 +10,24 @@ import Foundation
 class Otp: NSObject, NSCoding {
     
     let name: String
-    let value: Int32
+    let seed: String
     
-    init(_ name: String, _ value: Int32) {
+    init(_ name: String, _ seed: String) {
         self.name = name
-        self.value = value
+        self.seed = seed
+    }
+    
+    func generate() -> Int32 {
+        return 123456
     }
 
     func encode(with coder: NSCoder) {
         coder.encode(name, forKey: "name")
-        coder.encode(value, forKey: "value")
+        coder.encode(seed, forKey: "seed")
     }
     
     required init?(coder: NSCoder) {
         name = coder.decodeObject(forKey: "name") as! String
-        value = coder.decodeInt32(forKey: "value")
+        seed = coder.decodeObject(forKey: "seed") as! String
     }
 }
