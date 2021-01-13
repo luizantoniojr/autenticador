@@ -44,7 +44,7 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! OtpTableViewCell
         let otp = otps[indexPath.section]
         cell.nameLabel?.text = otp.name
-        cell.otpLabel?.text = String(otp.generate())
+        cell.otpLabel?.text = otp.generate()
         
         return cell
     }

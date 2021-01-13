@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftOTP
 
 class Otp: NSObject, NSCoding {
     
@@ -17,8 +18,15 @@ class Otp: NSObject, NSCoding {
         self.seed = seed
     }
     
-    func generate() -> Int32 {
-        return 123456
+    //UIW6LVA2ABMN37S3KDHZFS7TM4RMIFIW
+    func generate() -> String {
+        if let data = Data(base64Encoded: seed){
+            let totp = TOTP(secret: data, digits: 6, timeInterval: 30, algorithm: .sha1)
+            if let otp = totp?.generate(time: Date()) {
+                return otp
+            }
+        }
+        return "Erro"
     }
 
     func encode(with coder: NSCoder) {
