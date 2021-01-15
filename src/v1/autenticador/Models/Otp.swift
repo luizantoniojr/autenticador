@@ -20,7 +20,7 @@ class Otp: NSObject, NSCoding {
     
     //UIW6LVA2ABMN37S3KDHZFS7TM4RMIFIW
     func generate() -> String {
-        if let data = Data(base64Encoded: seed){
+        if let data = base32DecodeToData(seed) {
             let totp = TOTP(secret: data, digits: 6, timeInterval: 30, algorithm: .sha1)
             if let otp = totp?.generate(time: Date()) {
                 return otp
