@@ -27,12 +27,17 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
        } catch {
            Alert(controller: self).show(message: "Não foi possível ler os OTPs.")
        }
-   }
+    }
     
     func setupTableView() {
         self.otpsTableView.dataSource = self
         self.otpsTableView.delegate = self
         self.otpsTableView.backgroundColor = backgroundColor
+        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(refreshTableView) , userInfo: nil, repeats: true)
+    }
+    
+    @objc func refreshTableView() {
+        self.otpsTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,7 +50,8 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
         let otp = otps[indexPath.section]
         cell.nameLabel?.text = otp.name
         cell.otpLabel?.text = otp.generate()
-        
+        cell.timeProgress?.progress = otp.getProgress()
+                
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showDetails))
         cell.addGestureRecognizer(longPress)
         

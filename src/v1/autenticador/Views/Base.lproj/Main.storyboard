@@ -68,6 +68,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="wAw-8C-N8Q" id="f9N-ws-JNm"/>
                                             <outlet property="otpLabel" destination="gwQ-KO-AMb" id="QqP-TW-Hyh"/>
+                                            <outlet property="timeProgress" destination="H3C-HO-uGa" id="q0U-ly-lfo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

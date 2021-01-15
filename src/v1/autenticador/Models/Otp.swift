@@ -28,6 +28,12 @@ class Otp: NSObject, NSCoding {
         }
         return "Erro"
     }
+    
+    func getProgress() -> Float {
+        let timeNow = Date().timeIntervalSince1970 / 30
+        let progress = timeNow.truncatingRemainder(dividingBy: 1)
+        return Float(progress)
+    }
 
     func encode(with coder: NSCoder) {
         coder.encode(name, forKey: "name")
