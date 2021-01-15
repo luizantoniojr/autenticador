@@ -19,6 +19,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nuR-vU-37K" userLabel="Otps Table View">
                                 <rect key="frame" x="15" y="59" width="290" height="494"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="494" id="5ld-J0-EJD"/>
+                                    <constraint firstAttribute="width" constant="290" id="Zws-eH-M9E"/>
+                                </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OtpTableViewCell" rowHeight="100" id="BzE-Ws-OhO" userLabel="Otp Table View Cell" customClass="OtpTableViewCell" customModule="autenticador" customModuleProvider="target">
@@ -38,27 +42,23 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="888888" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwQ-KO-AMb" userLabel="Otp Label">
-                                                    <rect key="frame" x="76" y="29" width="138" height="42"/>
+                                                    <rect key="frame" x="76" y="29" width="138" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="138" id="6Im-20-MU8"/>
+                                                        <constraint firstAttribute="height" constant="43" id="XF9-PU-mw3"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="H3C-HO-uGa">
-                                                    <rect key="frame" x="10" y="85" width="270" height="4"/>
-                                                    <color key="tintColor" red="1" green="0.78039215689999997" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
-                                                </progressView>
                                             </subviews>
                                             <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="gwQ-KO-AMb" firstAttribute="leading" secondItem="wAw-8C-N8Q" secondAttribute="trailing" constant="-14" id="4yE-yr-UBm"/>
                                                 <constraint firstItem="wAw-8C-N8Q" firstAttribute="top" secondItem="kww-ye-zCN" secondAttribute="top" constant="10" id="Evg-gn-rgg"/>
-                                                <constraint firstItem="H3C-HO-uGa" firstAttribute="leading" secondItem="kww-ye-zCN" secondAttribute="leading" constant="10" id="IkK-fp-mux"/>
-                                                <constraint firstAttribute="bottom" secondItem="H3C-HO-uGa" secondAttribute="bottom" constant="11" id="NgB-Dz-pEe"/>
-                                                <constraint firstAttribute="trailing" secondItem="gwQ-KO-AMb" secondAttribute="trailing" constant="76" id="Pi6-rx-8f6"/>
-                                                <constraint firstItem="gwQ-KO-AMb" firstAttribute="leading" secondItem="kww-ye-zCN" secondAttribute="leading" constant="76" id="RFD-Vv-njQ"/>
-                                                <constraint firstItem="gwQ-KO-AMb" firstAttribute="centerY" secondItem="kww-ye-zCN" secondAttribute="centerY" id="oBx-mk-Ev9"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="gwQ-KO-AMb" secondAttribute="bottom" constant="18" id="pSx-Kq-nIn"/>
-                                                <constraint firstAttribute="trailing" secondItem="H3C-HO-uGa" secondAttribute="trailing" constant="10" id="r1z-Vz-oI1"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gwQ-KO-AMb" secondAttribute="bottom" constant="17" id="GNp-Xl-F6t"/>
+                                                <constraint firstItem="gwQ-KO-AMb" firstAttribute="top" secondItem="wAw-8C-N8Q" secondAttribute="bottom" constant="2" id="O3e-1h-hM5"/>
+                                                <constraint firstItem="gwQ-KO-AMb" firstAttribute="leading" secondItem="kww-ye-zCN" secondAttribute="leadingMargin" constant="60" id="QCw-lH-dsr"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gwQ-KO-AMb" secondAttribute="trailing" constant="60" id="REC-9P-CS8"/>
                                                 <constraint firstItem="wAw-8C-N8Q" firstAttribute="leading" secondItem="kww-ye-zCN" secondAttribute="leading" constant="10" id="vco-yF-TGS"/>
                                             </constraints>
                                             <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
@@ -68,19 +68,29 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="wAw-8C-N8Q" id="f9N-ws-JNm"/>
                                             <outlet property="otpLabel" destination="gwQ-KO-AMb" id="QqP-TW-Hyh"/>
-                                            <outlet property="timeProgress" destination="H3C-HO-uGa" id="q0U-ly-lfo"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="7nH-AN-E7Y">
+                                <rect key="frame" x="0.0" y="44" width="320" height="4"/>
+                                <color key="tintColor" red="1" green="0.78039215689999997" blue="0.035294117649999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="OWO-HU-LUb"/>
+                                    <constraint firstAttribute="height" constant="4" id="vFV-hP-geD"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nuR-vU-37K" secondAttribute="bottom" constant="15" id="4Hh-r2-dc7"/>
-                            <constraint firstItem="nuR-vU-37K" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="5nF-oH-jKT"/>
-                            <constraint firstItem="nuR-vU-37K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="No6-is-Iuu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nuR-vU-37K" secondAttribute="trailing" constant="15" id="nDq-Yh-1cW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nuR-vU-37K" secondAttribute="bottom" constant="15" id="9mX-40-vE7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nuR-vU-37K" secondAttribute="trailing" constant="15" id="KXv-1g-dhZ"/>
+                            <constraint firstItem="7nH-AN-E7Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RRW-FD-zLG"/>
+                            <constraint firstItem="nuR-vU-37K" firstAttribute="top" secondItem="7nH-AN-E7Y" secondAttribute="bottom" constant="11" id="Rqe-S1-AEi"/>
+                            <constraint firstItem="7nH-AN-E7Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="avZ-ea-BKb"/>
+                            <constraint firstItem="7nH-AN-E7Y" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qu4-Uu-idc"/>
+                            <constraint firstItem="nuR-vU-37K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="wAE-SO-8FB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Autenticador" id="cIN-lJ-DYH">
@@ -96,6 +106,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="otpsTableView" destination="nuR-vU-37K" id="3Hw-pd-yfJ"/>
+                        <outlet property="periodProgressView" destination="7nH-AN-E7Y" id="HfY-1f-cOF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

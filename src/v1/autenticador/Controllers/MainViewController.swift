@@ -10,6 +10,7 @@ import UIKit
 class MainViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate, AddOtpProtocol {
     
     @IBOutlet weak var otpsTableView: UITableView!
+    @IBOutlet weak var periodProgressView: UIProgressView!
     var otps: [Otp] = Array<Otp>()
     let backgroundColor = UIColor(red: 20, green: 20, blue: 20, alpha: 0)
     let otpDao = OtpDao()
@@ -18,26 +19,41 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         setupTableView()
         loadOtps()
+        setupPeriodRefreshProgressView()
     }
     
     private func loadOtps() {
-       do {
+        do {
             otps = try otpDao.get()
             self.otpsTableView.reloadData()
-       } catch {
-           Alert(controller: self).show(message: "Não foi possível ler os OTPs.")
-       }
+        } catch {
+            Alert(controller: self).show(message: "Não foi possível ler os OTPs.")
+        }
     }
     
     func setupTableView() {
         self.otpsTableView.dataSource = self
         self.otpsTableView.delegate = self
         self.otpsTableView.backgroundColor = backgroundColor
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(refreshTableView) , userInfo: nil, repeats: true)
     }
     
-    @objc func refreshTableView() {
-        self.otpsTableView.reloadData()
+    func setupPeriodRefreshProgressView()  {
+        Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(refreshPeriodProgressView) , userInfo: nil, repeats: true)
+    }
+    
+    @objc func refreshPeriodProgressView() {
+        let progress =  getPeriodProgress()
+        self.periodProgressView.progress = progress
+        
+        if progress <= 0.1 {
+            self.otpsTableView.reloadData()
+        }
+    }
+    
+    func getPeriodProgress() -> Float {
+        let timeNow = Date().timeIntervalSince1970 / 30
+        let progress = timeNow.truncatingRemainder(dividingBy: 1)
+        return Float(progress)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,7 +66,6 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
         let otp = otps[indexPath.section]
         cell.nameLabel?.text = otp.name
         cell.otpLabel?.text = otp.generate()
-        cell.timeProgress?.progress = otp.getProgress()
                 
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(showDetails))
         cell.addGestureRecognizer(longPress)
