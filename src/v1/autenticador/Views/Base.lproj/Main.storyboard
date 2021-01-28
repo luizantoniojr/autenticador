@@ -33,9 +33,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="u003337" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAw-8C-N8Q">
-                                                    <rect key="frame" x="10" y="10" width="80" height="17"/>
+                                                    <rect key="frame" x="10" y="10" width="270" height="17"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="pBq-n8-g4T"/>
+                                                        <constraint firstAttribute="height" constant="17" id="FAD-aH-HWI"/>
+                                                        <constraint firstAttribute="width" constant="264" id="b88-7n-3Vo"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="1" green="0.7803921568627451" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,12 +55,13 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.14117647059999999" green="0.14117647059999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="wAw-8C-N8Q" firstAttribute="top" secondItem="kww-ye-zCN" secondAttribute="top" constant="10" id="Evg-gn-rgg"/>
+                                                <constraint firstItem="wAw-8C-N8Q" firstAttribute="leading" secondItem="kww-ye-zCN" secondAttribute="leading" constant="10" id="2Rn-nH-EHY"/>
+                                                <constraint firstItem="gwQ-KO-AMb" firstAttribute="top" secondItem="wAw-8C-N8Q" secondAttribute="bottom" constant="2" id="92v-gl-aRs"/>
+                                                <constraint firstAttribute="trailing" secondItem="wAw-8C-N8Q" secondAttribute="trailing" constant="10" id="E1Q-GB-WEQ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="gwQ-KO-AMb" secondAttribute="bottom" constant="17" id="GNp-Xl-F6t"/>
-                                                <constraint firstItem="gwQ-KO-AMb" firstAttribute="top" secondItem="wAw-8C-N8Q" secondAttribute="bottom" constant="2" id="O3e-1h-hM5"/>
                                                 <constraint firstItem="gwQ-KO-AMb" firstAttribute="leading" secondItem="kww-ye-zCN" secondAttribute="leadingMargin" constant="60" id="QCw-lH-dsr"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="gwQ-KO-AMb" secondAttribute="trailing" constant="60" id="REC-9P-CS8"/>
-                                                <constraint firstItem="wAw-8C-N8Q" firstAttribute="leading" secondItem="kww-ye-zCN" secondAttribute="leading" constant="10" id="vco-yF-TGS"/>
+                                                <constraint firstItem="wAw-8C-N8Q" firstAttribute="top" secondItem="kww-ye-zCN" secondAttribute="top" constant="10" id="Xmn-yq-y9U"/>
                                             </constraints>
                                             <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                         </tableViewCellContentView>
@@ -113,6 +115,22 @@
             </objects>
             <point key="canvasLocation" x="71.25" y="77.112676056338032"/>
         </scene>
+        <!--Escanear-->
+        <scene sceneID="fau-fW-evh">
+            <objects>
+                <viewController id="TXk-LJ-VcJ" customClass="ScannerViewController" customModule="autenticador" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="llR-o0-vQs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8Mw-ew-CJ7"/>
+                        <color key="backgroundColor" red="0.078431372550000003" green="0.078431372550000003" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Escanear" id="OZu-4l-TDi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EO6-0g-my6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1789" y="-245"/>
+        </scene>
         <!--Novo-->
         <scene sceneID="WTA-TW-Rmv">
             <objects>
@@ -132,6 +150,9 @@
                                 <state key="normal" title="Escanear">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="TXk-LJ-VcJ" kind="show" identifier="scanner" id="km9-xg-nGj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKT-pb-YHY">
                                 <rect key="frame" x="16" y="210" width="288" height="123"/>
@@ -282,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ait-SG-ptX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="76.056338028169009"/>
+            <point key="canvasLocation" x="1789" y="445"/>
         </scene>
     </scenes>
     <resources>

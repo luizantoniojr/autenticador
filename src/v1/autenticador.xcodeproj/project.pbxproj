@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF37087F25C22E8500183277 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF37087E25C22E8500183277 /* ScannerViewController.swift */; };
 		BFB813E425A3FBAE00405BF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB813E325A3FBAE00405BF1 /* AppDelegate.swift */; };
 		BFB813E625A3FBAE00405BF1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB813E525A3FBAE00405BF1 /* SceneDelegate.swift */; };
 		BFB813E825A3FBAE00405BF1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB813E725A3FBAE00405BF1 /* MainViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF37087E25C22E8500183277 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		BFB813E025A3FBAE00405BF1 /* autenticador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = autenticador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFB813E325A3FBAE00405BF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFB813E525A3FBAE00405BF1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				BFB813FE25A533E900405BF1 /* OtpTableViewCell.swift */,
 				BFB8140425A55CAA00405BF1 /* NewOtpViewController.swift */,
 				BFB8140725A69C2F00405BF1 /* ManualViewController.swift */,
+				BF37087E25C22E8500183277 /* ScannerViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				BFB813FF25A533E900405BF1 /* OtpTableViewCell.swift in Sources */,
 				BFB8141C25AE7B3D00405BF1 /* Alert.swift in Sources */,
 				BFB8141525AE7A3100405BF1 /* BaseDao.swift in Sources */,
+				BF37087F25C22E8500183277 /* ScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,7 +12,7 @@ protocol AddOtpProtocol {
     func add(_ otp:Otp)
 }
 
-class NewOtpViewController:  UIViewController, AddOtpManuallyProtocol {
+class NewOtpViewController:  UIViewController, AddOtpManuallyProtocol, AddOtpAutomaticallyProtocol {
     
     var delegate: AddOtpProtocol?
     
@@ -23,6 +23,11 @@ class NewOtpViewController:  UIViewController, AddOtpManuallyProtocol {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "manual",
             let viewController = segue.destination as? ManualViewController {
+                    viewController.delegate = self
+            }
+        
+            if segue.identifier == "scanner",
+            let viewController = segue.destination as? ScannerViewController {
                     viewController.delegate = self
             }
     }
