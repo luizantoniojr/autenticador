@@ -113,12 +113,11 @@ class MainViewController:  UIViewController, UITableViewDataSource, UITableViewD
         if gesture.state == .began {
             let cell = gesture.view as! UITableViewCell
             if let indexPath = self.otpsTableView.indexPath(for: cell) {
-                let otp  = otps[indexPath.row]
-                
+                let otp  = otps[indexPath.section]
                 let acoes = getActions { (alert) in
                     do {
-                        self.otps.remove(at: indexPath.row)
-                        try self.otpDao.delete(at: indexPath.row)
+                        self.otps.remove(at: indexPath.section)
+                        try self.otpDao.delete(at: indexPath.section)
                         self.otpsTableView.reloadData()
                     } catch {
                         Alert(controller: self).show(message: "Não foi possível remover o OTP.")
